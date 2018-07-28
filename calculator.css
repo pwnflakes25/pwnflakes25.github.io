@@ -1,0 +1,240 @@
+
+nav {
+  background: linear-gradient(to right, #0a2c5d , #135bc3 ) ;
+  color: #EFEFEF;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+ }
+
+ .part1 {
+   background: #eeeef0;
+   opacity: 0.8;
+   z-index: 1;
+   overflow: hidden;
+   display: block;
+   padding-bottom: 5%;
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+   padding-top: 10%;
+
+ }
+
+ @media only screen and (max-width: 480px) , (orientation: portrait) {
+   .part1 {
+     padding-top: 30%;
+   }
+ }
+
+
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    nav img {
+      width: 5.5em;
+      max-height: 7em;
+    }
+    nav .container object {
+      width: 4.5em;
+      padding: 1.2em 0.5em; }
+    nav .container .calculator-button,
+    nav .container .guide-button,
+    nav .container .support-button {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 1em 1.25em;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: pointer; }
+
+      @media only screen and (max-width: 480px) , (orientation: portrait) {
+        nav .container {
+          font-size: 12px;
+          width: 60%;
+          display: inline;
+        }
+      }
+
+
+  #MainTitle, .heading {
+    font-family:'Work Sans', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    display: block;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 480px) {
+    #MainTitle {
+      margin-top: 30%;
+      margin-bottom: 10%;
+      margin-left: 10%;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    #MainTitle .heading, .subheading, .descBox, #Petunjuk{
+      font-size: 90%;
+    }
+  }
+
+
+  .descBox {
+    margin-left: 70px;
+    display: block;
+    width: 60%;
+    margin-top: 5%;
+    position: relative;
+    letter-spacing: 1.5px;
+  }
+
+  .subheading {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 400;
+  }
+  p .description {
+   font-family: 'Quicksand', sans-serif;
+ }
+
+  .descBox ul li {
+   font-weight: 400;
+   list-style-type: square;
+   font-size: 20px;
+   font-family: 'Work Sans', sans-serif;
+ }
+
+ .formText {
+   font-size: 20px;
+ }
+
+ @media only screen and (max-width: 480px), (orientation: portrait) {
+    .Calculator, #answerBox, #inputLabel, #totalAll, #totalPajak, #totalNotarisFee, #hargaUnit, #supportMessage {
+      font-size: 10px;
+    }
+ }
+
+ @media only screen and (max-width: 480px), (orientation: portrait) {
+     #divContainer {
+      font-size: 10px;
+      width: 100%;
+    }
+ }
+
+ @media only screen and (max-width: 480px), (orientation: portrait) {
+     #hargaUnit, #notarisList, #answerBoxChild {
+      width: 150%;
+      overflow: hidden;
+    }
+ }
+
+
+
+
+.Calculator {
+  background: #dce2ea;
+  width: 50%;
+  position: relative;
+  margin-left: 3%;
+  top: 20%;
+  left: 24%;
+  padding-left: 5%;
+  border: 50px;
+  z-index: 2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.emptyInputField {
+  border: red;
+}
+
+#formAlert {
+ color: red;
+ font-size: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+
+#notarisList {
+  width: 100%;
+  display: block;
+
+}
+
+#answerBox {
+ width: 50%;
+ display: none;
+}
+
+#divContainer {
+  width: 70%;
+  display: block;
+}
+
+.support {
+  background:  #448be1;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  padding: 1.5%;
+}
+
+.contributeForm {
+  width: 30%;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+#supportMessage {
+  width: 40%;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 480px) {
+   #supportMessage, .contributeForm {
+     display: block;
+     width: 80%;
+   }
+}
+@media only screen and (max-width: 480px) {
+   .support {
+    padding: 10%;
+   }
+}
+
+
+.activeButton {
+  color: #39ff14;
+  /* background-color: #0066ff; */
+}
+
+footer {
+  background-color:  #474749;
+  position: absolute;
+  width: 100%;
+  border: 5%;
+  padding-left: 5%;
+}
+
+footer div {
+  display: inline-block;
+  color: white;
+  font-family:;
+  width: 300px;
+}

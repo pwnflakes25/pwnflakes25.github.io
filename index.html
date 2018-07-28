@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Biaya Notaris | Calculator</title>
+    <link rel="stylesheet" href="./calculator.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Work+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+  </head>
+  <body>
+
+    <nav>
+      <div class='container'>
+        <!-- <object type='image/svg+xml' data='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/sole-logo.svg'></object> -->
+        <img src="./Hitungin.com.jpg" alt="">
+        <div>
+          <span class='calculator-button'>Calculator</span>
+          <span class='guide-button'>Petunjuk</span>
+          <span class='support-button'>Support</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="part1">
+
+      <div class="Calculator" id='Calculator'>
+        <form>
+         <!-- for drop down -->
+          <div class="form-row align-items-center" id="divContainer">
+            <div class="col-auto my-1">
+              <label class="mr-sm-2" for="inlineFormCustomSelect">Pilih Notaris</label>
+              <select class="custom-select mr-sm-2" id="notarisList">
+                <option value='Choice' selected>Pilih Notaris..</option>
+                <option value="Standard">Standard</option>
+                <option value="ManshurIshak">Manshur Ishak (Jakarta Selatan)</option>
+                <option value="MelatiSinaga">Melati Sinaga (Jakarta Selatan)</option>
+              </select>
+              </div>
+            </div>
+            <br>
+
+           <!-- for Input Fields-->
+          <label class="mr-sm-2" for="inlineFormCustomSelect" id="hargaFieldLabel">Harga Unit</label>
+             <div id="divContainer">
+               <div class="input-group mb-3" id="hargaUnitDiv">
+                 <div class="input-group-prepend">
+                   <span class="input-group-text" id="inputLabel">Rp.</span>
+                 </div>
+                 <input type="number" class="form-control" id="hargaUnit" aria-label="Amount (to the nearest Rupiah)">
+                 <div class="input-group-append">
+                   <span class="input-group-text" id="inputLabel">.00</span>
+                 </div>
+               </div>
+               <p id="formAlert" class="hide formText"><span>*</span> Maaf, masukan harga terlebih dahulu</p>
+             </div>
+
+
+             <!-- for Button -->
+             <div id="calculateButton"  class="btn btn-primary">
+                Calculate
+             </div>
+             <div id="resetButton"  class="btn btn-primary">
+                Reset
+             </div>
+             <br><br>
+
+           </form>
+
+
+       <div id="answerBox" class="hide">
+          <label class="mr-sm-2" for="inlineFormCustomSelect">Total Biaya Pajak (Penjual dan Pembeli)</label>
+           <div class="input-group mb-3" id="answerBoxChild">
+              <div class="input-group-prepend">
+                 <span class="input-group-text" id="inputLabel">Rp.</span>
+              </div>
+                <input type="text" id="totalPajak" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+           </div>
+
+         <label class="mr-sm-2" for="inlineFormCustomSelect">Total Biaya Tambahan</label>
+           <div class="input-group mb-3" id="answerBoxChild">
+              <div class="input-group-prepend">
+                 <span class="input-group-text" id="inputLabel">Rp.</span>
+              </div>
+                <input type="text" id="totalNotarisFee" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+           </div>
+
+         <label class="mr-sm-2" for="inlineFormCustomSelect">Total Keseluruhan</label>
+           <div class="input-group mb-3" id="answerBoxChild">
+              <div class="input-group-prepend">
+                 <span class="input-group-text" id="inputLabel">Rp.</span>
+              </div>
+                <input type="text"  id="totalAll" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+           </div>
+
+           <p id="answerBoxChild"><b>Disclamer:</b> Harga di atas hanyalah <strong> estimasi </strong> berdasarkan waktu disaat informasi tersebut di dapatkan. Biaya-biaya tersebut belum termaksud biaya hasil negosiasi.</p>
+           <p id="answerBoxChild">*Kalkulator ini mengasumsikan kalau anda ikut memasukan proses PPJB, AJB, dan Balik Nama</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="part2">
+      <div id="Petunjuk">
+           <h1 class="heading">Petunjuk</h1>
+
+           <div class="descBox">
+             <h2 class="subheading">1.) Harga Unit / NJOP</h2>
+             <p class="description"><i> Harga unit </i> adalah harga jual unit atau nilai transaksi yang telah disetujui oleh kedua pihak, pembeli dan penjual.
+             Untuk kalkulator ini, Harga Unit adalah harga deal anda dengan penjual/ pembeli anda <u>diluar harga pajak</u>. <br><br>
+
+               <i> Nilai Jual Objek Pajak (NJOP) </i> adalah harga rata-rata jual beli unit anda yang didasarkan dengan objek sejenis, Nilai Jual Objek Pajak Pengganti atau nilai baru.
+               <b> Nilai NJOP khusus untuk suatu wilayah bisa anda dapatkan
+                dengan membuka portal resmi pemerintah daerah tersebut </b> (contoh <a href="https://www.jakarta.go.id">jakarta.go.id</a> untuk area Jakarta). Atau, untuk lebih mudah nya
+                anda bisa langsung kontak developer properti anda.<br><br>
+               Untuk informasi lebih detil mengenai NJOP <a href="https://www.rumah.com/berita-properti/2016/2/117447/apa-itu-njop-dan-njkp"> Klik Disini </a> <br><br>
+
+               Untuk pilihan 'Standard', kalkulator menghitung harga biaya-biaya berdasarkan NJOP.
+             </p>
+           </div>
+
+           <div class="descBox">
+             <h2 class="subheading">Total Biaya Pajak</h2>
+             <p class="description">
+                Total biaya pajak di ambil dari dua tipe pajak wajib — PPH (Pajak penjual) dan BPHTB (Pajak pembeli). Kedua nilai ini ditentukan
+                berdasarkan biaya NJOP atau harga jual beli unit anda.
+             </p>
+           </div>
+
+           <div class="descBox">
+             <h2 class="subheading">Biaya Tambahan</h2>
+             <p class="description"><i>Biaya Tambahan </i> adalah biaya yang termaksud dalam pembelian/penjualan unit properti diluar biaya-biaya yg telah disebutkan.
+                Adapun, biaya-biaya tersebut ada yang ditujukan kepada negara atau pemerintah daerah (seperti PNBP); biaya seperti ini sudah fix tergantung ketetapan pemerintah.
+                Dan ada biaya yang ditujukan ke pejabat pemberi jasa, seperti notaris/PPAT. Berikut adalah biaya-biaya tersebut:
+              </p>
+
+              <ul>
+                <li>PNBP</li>
+                <p>Penerimaan Negara Bukan Pajak (PNBP) adalah salah satu biaya tambahan yang dibayarkan saat akan memproses
+                  Akta Jual Beli. Biaya ini ditujukan ke pemerintah dan bergantung kepada harga transaksi/NJOP.</p>
+                <li>Cek Sertifikat</li>
+                <p>Biaya Cek Sertifikat adalah biaya yang dibayarkan kepada notaris untuk jasa memvalidasikan sertifikat. Biaya ini berbeda-beda
+                per notaris.</p>
+                <li>PPJB</li>
+                <p>Perjanjian Pengikatan Jual Beli adalah biaya yang dibayarkan untuk pengikatan antara penjual dengan pembeli dimana
+                  Akta Jual Beli atau sertifikat sebuah properti belum dirilis. Pembayaran tersebut dibayarkan ke notaris</p>
+                <li>Kuasa Untuk Menjual</li>
+                <p>Kuasa untuk menjual adalah biaya tambahan lain yang ditujukan untuk notaris. Sebagian notaris ada yang membebankan biaya ini
+                dan ada yang tidak.</p>
+                <li>AJB</li>
+                Akta Jual Beli adalah biaya yang harus ditanggung pembeli/penjual properti atas jasa pembuatan akta jual beli. Akta jual beli ini berbeda-beda per daerah
+                dan pemberi jasa(notaris).
+                <li>Balik Nama</li>
+                Biaya balik nama adalah biaya yang dibayarkan untuk proses balik nama, atau proses pengalihan hak milik dari penjual ke pembeli. Proses ini biasanya adalah proses
+                terakhir dari pembelian/penjualan properti.
+              </ul><br><br>
+
+               <p>Untuk info tentang biaya-biaya diatas lebih lanjut, bisa <a href="https://www.cermati.com/artikel/biaya-biaya-yang-ada-dalam-proses-jual-beli-rumah">ke sini.</a></p>
+           </div>
+      </div>
+    </div>
+    <div class="support">
+
+      <div class="supportMessage" id="supportMessage">
+        <h2>Support Us!</h2>
+        <p>Bantu Kami menambahkan data kami untuk membantu lebih banyak orang lagi! Jika anda pernah bertransaksi sebelum nya
+        di notaris manapun, kirimkan kami daftar biaya perhitungan nya agar bisa kami tambahkan ke kalkulator.
+         Cara format pengiriman:</p>
+         <ol>
+           <li>Nama Notaris</li>
+           <li>Lokasi</li>
+           <li>Harga Transkasi</li>
+           <li>Biaya Ajb</li>
+           <li>Biaya Cek Sertifikat</li>
+           <li>Biaya Balik Nama</li>
+         </ol>
+         <p>Atau langsung saja upload screenshot/foto perhitungan nya</p>
+      </div>
+
+      <form class="contributeForm" id="gform" action="https://script.google.com/macros/s/AKfycbzh2pO668pt-T116MU44ahYl9XnaRXHVL05Vutpbg/exec" method="post">
+             <div class="form-group">
+               <label for="exampleFormControlInput1">Email address</label>
+               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+             </div>
+             <div class="form-group">
+               <label for="exampleFormControlTextarea1">Message</label>
+               <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+             </div>
+             <button type="submit" name="submit"  class="btn btn-primary" id="contributeSubmit">Submit</button>
+      </form>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data" id='imageUpload'>
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Upload Foto/Screenshot</label>
+          <input type="file" class="form-control-file" name="ImageUpload" id="exampleFormControlFile1">
+        </div>
+         <button type="submit" name="submit"  class="btn btn-primary" id="contributeSubmit">Upload</button>
+      </form>
+
+      <div class='formResponse' style="display: none;" id="thankyou_message">
+           <h3>Terima Kasih atas kontribusi anda! Kami akan respon email anda untuk feedback.</h3>
+      </div>
+
+    </div>
+
+    <footer>
+          <div class="">
+            <img src="" alt="">
+            <p>Membantu Memudahkan Proses</p>
+          </div>
+    </footer>
+
+
+        <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="NotaryCalc.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+
+  </body>
+</html>
