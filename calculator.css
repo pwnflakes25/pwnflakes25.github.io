@@ -32,8 +32,9 @@ nav {
     justify-content: space-between;
     align-items: center; }
     nav img {
-      width: 5.5em;
-      max-height: 7em;
+      width: auto;
+      height: 4em;
+      margin: 1%;
     }
     nav .container object {
       width: 4.5em;
@@ -134,7 +135,11 @@ nav {
     }
  }
 
-
+@media only screen and (max-width: 480px), (orientation: portrait) {
+  .Calculator, #answerBox {
+    width: 100%;
+  }
+}
 
 
 .Calculator {

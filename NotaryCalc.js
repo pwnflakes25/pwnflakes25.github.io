@@ -34,7 +34,7 @@ function calculateStandard(hargaTransaksi) {
   }
 
   Standard.CekSertifikat = 50000;
-  Standard.Ppjb = 0.01 * hargaTransaksi;
+  Standard.Ppjb = 1000000;
   Standard.KuasaUntukMenJual = 0;
   Standard.Ajb = 0.01 * hargaTransaksi;
   Standard.BalikNama = 25000;
@@ -65,6 +65,7 @@ function calculateStandard(hargaTransaksi) {
 function calculate(hargaTransaksi, namaNotaris) {   //function yg calculate biaya2 notaris
 
  //constant values dibawah ini:
+  hargaTransaksi = hargaTransaksi.replace(/[.,\s]/g, '');
   let pajakPenjual = 0.025 * hargaTransaksi;
   let pajakPembeli = (hargaTransaksi - 80000000) * 0.05;
 
